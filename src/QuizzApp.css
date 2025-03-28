@@ -1,0 +1,429 @@
+  html, body {
+        overflow: hidden;
+        height: 100%;
+    }
+ .imgquestion{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+ }
+ .timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+  }
+  
+  .timer-svg {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .timer-border {
+    fill: none;
+    stroke: black;
+    stroke-width: 5;
+    stroke-linecap: round;
+  }
+  
+  .timer-knob {
+    fill: black;
+  }
+  
+  .timer-text {
+    font-size: 24px;
+    font-weight: bold;
+    fill: black;
+  }
+  
+    .ant-card-body button{
+        background-color: #FDAB0A !important;
+    }
+
+    .ant-card-body button:hover{
+    background-color: #FDAB0A !important;
+    color: black !important;
+    background-color: #c7932b !important;
+    border-color: black !important;
+}
+    .ant-card-body button:focus,
+.ant-card-body button:active{
+    background-color: #c7932b !important;
+    border-color: black !important;
+}
+    .intro-screen {
+        background-image: url('/public/home.jpg');
+        background-size: cover; 
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+
+      }
+      
+      .intro-bg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+.room {
+    background-image: url('/public/home1.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-room{
+        width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        margin-top: 300px;
+        background: rgba(255, 255, 255, 0.2); 
+        backdrop-filter: blur(40px); 
+        border-radius: 15px; 
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+        border: 1px solid rgba(255, 255, 255, 0.3); 
+}
+.avatar-room{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid gray; 
+    padding: 0px;
+}
+
+/* phòng chờ */
+
+/* Thiết kế thẻ phòng chờ */
+.waiting-room-card {
+    background-image: url('/public/home1.jpg'); 
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    color: white;
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Danh sách người chơi */
+.player-list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 900px;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+}
+.room-card{
+    margin-top: 220px;
+}
+.room-card h2{
+    padding-top: 15px;
+    color: #FDAB0A ;
+ 
+}
+/* Từng người chơi */
+.player-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hiệu ứng hover khi rê chuột vào */
+.player-item:hover {
+    transform: scale(1.1);
+}
+
+/* Ảnh đại diện */
+.player-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+/* Tên người chơi */
+.player-name {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Tin nhắn chờ */
+.waiting-message {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: yellow;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* câu hỏi */
+.quiz-app-question{
+    background-image: url('/public/cauhoi.jpg'); 
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quiz-app-question-question{
+    background-color: transparent !important;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border: none; /* Bỏ viền */
+    font-size: 10px !important;
+}
+
+.quiz-app-point{
+    background-image: url('/public/cauhoi.jpg'); 
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quiz-app-xephang {
+    margin-top: 140px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(10px);
+}
+.quiz-app-xephang-list{
+    
+     max-height: 450px;
+     height: 100%;
+     overflow-y: auto;
+     
+}
+
+.quiz-app-xephang-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+.quiz-app-xephang-list {
+    scrollbar-width: none;
+}   
+
+.quiz-app-xephang h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
+}
+
+.quiz-app-xephang ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quiz-app-xephang li {
+    
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #444;
+    transition: background 0.3s ease;
+    border-radius: 8px;
+}
+
+.quiz-app-xephang li:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.quiz-app-xephang li:last-child {
+    border-bottom: none;
+}
+
+.player-avatar-thongke {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 2px solid #fff;
+}
+
+/* Màu sắc cho top 3 */
+.quiz-app-xephang li:nth-child(1) {
+    font-weight: bold;
+    color: #FFD700; /* Vàng */
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.quiz-app-xephang li:nth-child(2) {
+    font-weight: bold;
+    color: #C0C0C0; /* Bạc */
+    background: rgba(192, 192, 192, 0.1);
+}
+
+.quiz-app-xephang li:nth-child(3) {
+    font-weight: bold;
+    color: #CD7F32; /* Đồng */
+    background: rgba(205, 127, 50, 0.1);
+}
+
+
+
+
+
+
+
+
+
+.itemwaiting{
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .quiz-app-question-question{
+        background-color: transparent !important;
+        width: 88%;
+        max-width: 900px;
+       height: 290px;
+        border: none; /* Bỏ viền */
+        font-size: 8px !important;
+    }
+    .answer-option{
+        width: 100% !important; 
+    }
+.itemwaiting{
+    width: 70px;
+}
+.room-card h2{
+    margin-top: 0px;
+    padding-top: 0px;
+    color: #FDAB0A ;
+ 
+}  
+    .intro-screen {
+        background-image: url('/public/home1mobile.jpg');
+      }
+    .room {
+        background-image: url('/public/home1mobile.jpg');
+        max-height: 100vh !important;
+    }
+    .card-room{
+        max-width:500px ;
+        width: 90%;
+        max-height: 400px;
+        height: 100%;
+        margin: 0 auto;
+        padding: 20px;
+        margin-top: 100px !important;
+        background: rgba(255, 255, 255, 0.2); 
+        backdrop-filter: blur(40px); 
+        border-radius: 15px; 
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+        border: 1px solid rgba(255, 255, 255, 0.3); 
+}
+.avatar-room{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid gray; 
+    padding: 0px;
+}
+/* phòng chờ */
+.waiting-room-card {
+    background-image: url('/public/home1mobile.jpg'); 
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    color: white;
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.quiz-app-question{
+    background-image: url('/public/cauhoimobile.jpg'); 
+}
+.quiz-app-point{
+    background-image: url('/public/cauhoimobile.jpg'); 
+}
+
+/* xếp hạng  */
+.quiz-app-xephang {
+    margin-top: 250px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(10px);
+}
+.quiz-app-xephang-list{
+    
+    max-height: 45vh;
+    height: 80% !important;
+   
+    overflow-y: auto;
+}
+
+}
+
+
+@media (max-width: 378px) {
+    .quiz-app-xephang {
+        margin-top: 210px;
+     
+    }
+}
