@@ -381,7 +381,8 @@ const QuizApp = () => {
 
                     <Card className="quiz-app-question-question">
                       {/* Hiển thị câu hỏi */}
-                      <h1>{question?.question || "Đang tải câu hỏi..."}</h1>
+                      <h1 dangerouslySetInnerHTML={{ __html: question?.question.replace(/\n/g, "<br />") || "Đang tải câu hỏi..." }} />
+
                       <div className='timeout'><h2>{time > 0 ? `⏳ ${time}s` : "🎉 Hết giờ!"}</h2></div>
                       {/* Hiển thị hình ảnh nếu có */}
                       {question?.image && (
