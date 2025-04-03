@@ -113,7 +113,6 @@ const QuizApp = () => {
       setTotalWrong(totalWrong);
       setCurrentQuestion(correctAnswer);
 
-      // Chỉ hiển thị khi có đủ dữ liệu
       setshowQuestionCorrect(true);
     });
 
@@ -173,7 +172,8 @@ const QuizApp = () => {
                 ) : (
                   <Card style={{ width: 400, margin: '0 auto', padding: '20px' }}>
                     <h1>Admin Control</h1>
-                    <div className='timeout'><h2>{time > 0 ? `⏳ ${time}s` : "🎉 Hết giờ!"}</h2></div>
+               
+            
                     {!gameStarted ? (
                       <>
                         <Button type="primary" onClick={() => socket.emit('startGame')}>
@@ -183,7 +183,7 @@ const QuizApp = () => {
                       </>
                     ) : (
                       <>
-                      {time <= 1 || time >= 39 ? (
+                      {time <= 28 || time >= 39 ? (
                         <>
                           <Button
                             type="primary"
@@ -382,36 +382,49 @@ const QuizApp = () => {
                     <Card className="quiz-app-question-question">
                       {/* Hiển thị câu hỏi */}
                       <h1 dangerouslySetInnerHTML={{ __html: question?.question.replace(/\n/g, "<br />") || "Đang tải câu hỏi..." }} />
-
-                      <div className='timeout'><h2>{time > 0 ? `⏳ ${time}s` : "🎉 Hết giờ!"}</h2></div>
+                      {/* <div className='timeout'><h2>{time > 0 ? `⏳ ${time}s` : "🎉 Hết giờ!"}</h2></div> */}
                       {/* Hiển thị hình ảnh nếu có */}
                       {question?.image && (
                         <div className="imgquestion">
                           <img
                             src={question.image}
                             alt="Câu hỏi hình ảnh"
-                            style={{ maxHeight: "300px", height: "100%", maxWidth: "500px", width: "100%", borderRadius: "10px", marginBottom: "10px" }}
+                            style={{ maxHeight: "250px", height: "100%", maxWidth: "500px", width: "100%", borderRadius: "10px", marginBottom: "10px" }}
                           /></div>
                       )}
 
                       {/* Hiển thị âm thanh nếu có */}
                       {question?.audio && (
-                        <audio controls style={{ width: "100%", marginBottom: "10px" }}>
+                        <audio controls  style={{ width: "100%", marginBottom: "10px" }}>
                           <source src={question.audio} type="audio/mpeg" />
                           Trình duyệt của bạn không hỗ trợ phát âm thanh.
                         </audio>
                       )}
-
+  {question?.video && (
+    <div className="video-container" style={{ textAlign: "center", marginBottom: "10px" }}>
+      <video controls style={{ maxWidth: "80%", borderRadius: "10px" }}>
+        <source src={question.video} type="video/mp4" />
+        Trình duyệt của bạn không hỗ trợ phát video.
+      </video>
+    </div>
+  )}
                       {/* Hiển thị các lựa chọn đáp án */}
                       {question?.options ? (
                         question.options.map((option, index) => (
                           <Button
                             key={index}
                             onClick={() => handleAnswer(option)}
-                            disabled={time <= 0}
+                            disabled={!!selectedAnswer}
                             style={{
+                          
                               margin: "10px",
-                              background: selectedAnswer === option ? "#1890ff" : "",
+                              background: selectedAnswer === option ? "#FFB400" : "#FFD580", // Vàng đậm khi chọn, vàng nhạt khi chưa chọn
+                              color: selectedAnswer === option ? "#6A3E19" : "#3A1D00", // Chữ nâu đậm
+                              border: selectedAnswer === option ? "3px solid #6A3E19" : "1px solid #D9D9D9",
+                              fontWeight: selectedAnswer === option ? "bold" : "normal",
+                              cursor: selectedAnswer ? "not-allowed" : "pointer",
+                              transition: "all 0.3s ease-in-out",
+                              opacity: selectedAnswer && selectedAnswer !== option ? 0.5 : 1,
                             }}
 
                           >
